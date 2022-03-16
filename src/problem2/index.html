@@ -1,0 +1,77 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fancy Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- You may add more stuff here -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
+  <div class="container">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <div class="card border-light shadow">
+          <div class="card-body">
+            <h2 class="card-title mb-3">Fancy Form</h2>
+            <form class="card-text">
+              <div class="mb-3">
+                <label for="input-address" class="form-label">ETH Address</label>
+                <input class="form-control" id="input-address" placeholder="Enter Address" required>
+              </div>
+              <div class="mb-3">
+                <label for="input-amount" class="form-label">Amount to send</label>
+                <input type="number" class="form-control" id="input-amount" placeholder="Enter Amount" required>
+              </div>
+              <div class="mb-3">
+                <label for="input-otp" class="form-label">OTP Authentication</label>
+                <input type="number" class="form-control" id="input-otp" placeholder="Enter OTP" aria-describedby="otpHelp" required>
+                <div id="otpHelp" class="form-text">Never share your OTP with anyone else.</div>
+              </div>
+              <button type="submit" class="btn btn-outline-primary">SEND TOKENS</button>
+            </form>
+          </div>
+        </div>
+        
+        <div class="modal-backdrop fade show" id="backdrop" style="display: none;"></div>
+        <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-body">
+                <i class="bi bi-exclamation-triangle"></i>
+                <h4 class="mb-3 mt-3">Amount needs to be more then 0 !</h4>
+                <button type="button" class="btn btn-danger" onclick="closeModal()">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+          <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              <strong class="me-auto">Success</strong>
+              <small>A few seconds ago</small>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+              <img src="https://www.meme-arsenal.com/memes/7880b129154c69c3a1211d0f241a7952.jpg" class="rounded me-2" width="300" alt="hirepls">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
